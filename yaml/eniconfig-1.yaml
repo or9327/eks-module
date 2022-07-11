@@ -1,0 +1,8 @@
+apiVersion: crd.k8s.amazonaws.com/v1alpha1
+kind: ENIConfig
+metadata:
+  name: ap-northeast-2a # Pod 전용 서브넷 #1의 Availability Zone 기호 (필요시 업데이트)
+spec:
+  securityGroups:
+    - sg-01aaefdba80cd887b # Cluster Security Group ID ([작업 2] 수행시의 Terraform Output 참조) 
+  subnet: subnet-03db25affd743f03a # Pod 전용 서브넷 #1의 서브넷 ID (기 생성되어 있는 서브넷의 ID)
